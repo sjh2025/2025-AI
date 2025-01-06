@@ -7,7 +7,7 @@ from PIL import Image
 import gdown
 
 # Google Drive 파일 ID
-file_id = '1NKIhMhUeRC0vPptHwT4it-LMYhamVDyi'
+file_id = '1NKIhMhUeRC0vPptHwT4it-LMYhamVDyi'        #드라이브 가져옴
 
 # Google Drive에서 파일 다운로드 함수
 @st.cache(allow_output_mutation=True)
@@ -16,8 +16,8 @@ def load_model_from_drive(file_id):
     output = 'model.pkl'
     gdown.download(url, output, quiet=False)
 
-    # Fastai 모델 로드
-    learner = load_learner(output)
+    # Fastai 모델 로드 
+    learner = load_learner(output)                   # 모델을 만듬
     return learner
 
 # 모델 로드
